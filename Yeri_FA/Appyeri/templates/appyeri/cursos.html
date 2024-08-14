@@ -1,0 +1,26 @@
+{% extends 'appyeri/base.html' %}
+        {% load static %}
+        {% block cursos %}
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>Nuestros Cursos</h2>
+                        <p class="lead">En nuestra academia deportiva nos propusimos formar profesionales que puedan integrarse en el mundo deportivo.</p>
+                        <p class="mb-0">Con nuestros programas podran acceder a todas las herramientas y equipo de profesionales en pos de lograr sus objetivos personales.</p>
+                        <p class="mb-0">Podras perfeccionarte en las carreras de: Director tecnico deportivo, Preparador fisico, Scouting, Analista de datos con orientacion al deporte, Entrenador de arqueros, entre otros.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h2>Agregar cursos:</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Curso: <input type="text" name="curso"></p>
+            <p>Camada: <input type="text" name="camada"></p>
+    
+            <input type="submit" value="Enviar">
+    
+        </form>
+        {% endblock cursos %}

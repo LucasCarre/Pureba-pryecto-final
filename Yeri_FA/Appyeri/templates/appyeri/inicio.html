@@ -1,0 +1,20 @@
+{% extends 'appyeri/base.html' %}
+{% load static %}
+{% block inicio %}
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1600x900')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="{% static 'appyeri/assets/img/02.jpeg'%}" width=300 alt="..." />
+                <h1 class="text-black fs-3 fw-bolder">YERI FA</h1>
+                <p class="text-black-50 mb-0">Academia de Futbol</p>
+                <p class="text-black-50 mb-0">Nosotros somos Yeri Futbol Academy, nuestro comienzo se da como un club de futbol de amigos que se fundo por el año 2015 teniendo un crecimiento exponencial en el transcurso de los años, nos complace poder presentarles nuestra academia de futbol en la cual buscaremos formar personas que quieran incursionar en el mundo del deporte respetando los valores que pregonamos como institucion desde el año 2015.
+                </p>
+                <p class="text-black-50 mb-0">Bienvendios a la familia verdinegra, los invitamos a ser parte...</p>
+            </div>
+        </header>
+        <div class = "in-1">
+            <img src="{% static 'appyeri/assets/img/03.jpeg'%}" width=350 alt="..." />
+            <img src="{% static 'appyeri/assets/img/06.jpeg'%}" width=465 alt="..." />
+            <img src="{% static 'appyeri/assets/img/07.jpeg'%}" width=465 alt="..." />
+        </div>
+{% endblock inicio %}

@@ -1,0 +1,24 @@
+{% extends 'appyeri/base.html' %}
+{% load static %}
+{% block sugerencias %}
+<!-- Content section-->
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Sugerencias</h2>
+                <p class="lead">Conocer tu opinion</p>
+                <p class="mb-0">En esta seccion podras dejarnos tus sugerencias sobre cursos que crees podriamos implementar en nuestra academia.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<h2>Que carrera te gustaria sumaramos a nuestra academia:</h2>
+<p class="lead">Modalidad(virtual o presencial)</p>
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Curso: <input type="text" name="nombre del curso"></p>
+    <p>Modalidad: <input type="text" name="modalidad"></p>
+
+    <input type="submit" value="Enviar">
+{% endblock sugerencias %}

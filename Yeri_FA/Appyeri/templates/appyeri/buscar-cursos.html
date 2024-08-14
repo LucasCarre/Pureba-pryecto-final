@@ -1,0 +1,14 @@
+{% extends 'appyeri/base.html' %}
+
+{% load static %}
+
+{% block buscar_cursos %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ mi_formulario.as_table }}
+    </table>
+    <input type="submit" value="Buscar">
+
+</form>
+{% endblock buscar_cursos %}

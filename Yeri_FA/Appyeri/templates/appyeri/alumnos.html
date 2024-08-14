@@ -1,0 +1,26 @@
+{% extends 'appyeri/base.html' %}
+{% load static %}
+{% block alumnos %}
+<!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>Alumnos</h2>
+                        <p class="lead">Autogestion de carrera profesional.</p>
+                        <p class="mb-0">En esta seccion podras inscricibirte, gestionar tus cursos y ver tu desarrollo profesional en la academia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h2>Tu inscripcion:</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Nombre: <input type="text" name="nombre"></p>
+            <p>Apellido: <input type="text" name="apellido"></p>
+            <p>Email: <input type="text" name="email"></p>
+        
+            <input type="submit" value="Enviar">
+        
+        </form>
+{% endblock alumnos %}

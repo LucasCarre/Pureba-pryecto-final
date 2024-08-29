@@ -12,11 +12,17 @@
     <p>Carrera: {{curso.nombre}}
     <p>Camada: {{curso.camada}}
 
+    {%if request.user.is_superuser %}
     <a class="btn btn-secondary" href="{% url 'BorrarCurso' curso.pk %}">Borrar</a>
+    {% endif %}
     |
+    {% if request.user.is_staff %}
     <a class="btn btn-secondary" href="{% url 'ActualizarCurso' curso.pk %}">Actualizar</a>
+    {% endif %}
     {% endfor %}
+    {%if request.user.is_staff%}
     <a class="btn btn-primary" href="{% url 'AgregarCurso'%}">Nuevo Curso</a>
+    {% endif %}
     <p class="mb-0">Si no ves en esta pagina la carrera que estas buscando te invitamos a nuestra seccion de <a class="btn btn-link" href="{% url 'Sugerencias'%}">Sugerencias</a> para que podamos incorporar la carrera que estas buscando a nuestra academia, muchas gracias</p>
     
 {% endblock lista_cursos %}

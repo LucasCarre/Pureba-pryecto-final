@@ -25,13 +25,29 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'ListarProfesores'%}">Profesores</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Practicas'%}">Practicas</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Sugerencias' %}">Sugerencias</a></li>
-                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'BuscarCursos' %}">Login</a></li>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Perfil
+                            </button>
+                            {% if request.user.is_authenticated %}
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="{% url 'Logout' %}">Cerrar Sesion</a></li>
+                            </ul>
+                            {% else %}
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'Login' %}">Iniciar Sesion</a></li>
+                                <li><a class="dropdown-item" href="{% url 'Register' %}">Registrarse</a></li>
+                              </ul>
+                            {% endif %}
+                          </div>
                     </ul>
                 </div>
             </div>
         </nav>
         {% block inicio %}
         {% endblock inicio %}
+        {% block login %}
+        {% endblock login %}
         {% block buscar_cursos%}
         {% endblock buscar_cursos%}
         {% block cursos %}

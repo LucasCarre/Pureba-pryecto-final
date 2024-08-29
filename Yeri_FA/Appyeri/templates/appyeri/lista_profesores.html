@@ -8,8 +8,12 @@
     
     {% for profesor in Profesores %}
     <p>Profesional: {{profesor.apellido}}, {{profesor.nombre}}
-
+    
+    {%if request.user.is_superuser%}
     <a class="btn btn-secondary" href="{% url 'BorrarProfesor' profesor.pk %}">Borrar</a>
+    {% endif %}
+
+
     {% endfor %}
 
     <a class="btn btn-primary" href="{% url 'AgregarProfesor'%}">Nuevo Profesor</a>

@@ -5,6 +5,7 @@ from Appyeri.forms import *
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
@@ -100,7 +101,7 @@ class AlumnoCreateView(CreateView):
     success_url = reverse_lazy("ListarAlumnos")
     fields= ["nombre", "apellido"]
 
-class CursoListView(ListView):
+class CursoListView(LoginRequiredMixin, ListView):
     model = Curso
     context_object_name= "Cursos"
     template_name= "Appyeri/lista_cursos.html"

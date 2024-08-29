@@ -6,13 +6,18 @@
 <h1 class="text-black fs-3 fw-bolder">Catedra Estudiantil</h1>
 <p class="lead">Autogestion de carrera profesional.</p>
     <p class="mb-0">En esta seccion podras inscricibirte, gestionar tus cursos y ver tu desarrollo profesional en la academia.</p>
+    {%if request.user.is_staff%}
     <a class="btn btn-primary" href="{% url 'AgregarAlumno'%}">Nuevo Alumno</a>
-    
+    {% endif %}
     {% for alumno in Alumnos %}
     <p>Nombre: {{alumno.apellido}}, {{alumno.nombre}}</p>
 
+    {%if request.user.is_superuser%}
     <a class="btn btn-secondary" href="{% url 'AlumnoBorrar' alumno.pk %}">Borrar</a>
+    {% endif %}
     |
+    {% if request.user.is_staff %}
     <a class="btn btn-secondary" href="{% url 'AlumnoActualizar' alumno.pk %}">Actualizar</a>
+    {% endif %}
     {% endfor %}
 {% endblock lista_alumnos %}

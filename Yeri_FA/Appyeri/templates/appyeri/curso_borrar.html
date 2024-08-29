@@ -1,0 +1,13 @@
+{% extends 'Appyeri/base.html' %}
+
+{% load static %}
+
+{% block borrar_cursos %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        Seguro que desea borrar a este Curso? {{curso.nombre}}, {{curso.camada}}
+        <input class="btn btn-primary" type="submit" value="Borrar">
+        <a class="btn btn-link" href="{% url 'ListarCursos' %}">Cancelar</a>
+
+    </form>
+{% endblock borrar_cursos %}

@@ -1,0 +1,18 @@
+{% extends 'Appyeri/base.html' %}
+
+{% load static %}
+
+{% block lista_alumnos %}
+<h1 class="text-black fs-3 fw-bolder">Catedra Estudiantil</h1>
+<p class="lead">Autogestion de carrera profesional.</p>
+    <p class="mb-0">En esta seccion podras inscricibirte, gestionar tus cursos y ver tu desarrollo profesional en la academia.</p>
+    <a class="btn btn-primary" href="{% url 'AgregarAlumno'%}">Nuevo Alumno</a>
+    
+    {% for alumno in Alumnos %}
+    <p>Nombre: {{alumno.apellido}}, {{alumno.nombre}}</p>
+
+    <a class="btn btn-secondary" href="{% url 'AlumnoBorrar' alumno.pk %}">Borrar</a>
+    |
+    <a class="btn btn-secondary" href="{% url 'AlumnoActualizar' alumno.pk %}">Actualizar</a>
+    {% endfor %}
+{% endblock lista_alumnos %}

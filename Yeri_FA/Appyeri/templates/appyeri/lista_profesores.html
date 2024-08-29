@@ -1,0 +1,16 @@
+{% extends 'Appyeri/base.html' %}
+
+{% load static %}
+
+{% block lista_profesores %}
+    <h1 class="text-black fs-3 fw-bolder">Nuestros Profesionales</h1>
+    <p class="mb-0">Aqui podras conocer informacion sobre los profesores que forman parte de nuestro equipo...</p>
+    
+    {% for profesor in Profesores %}
+    <p>Profesional: {{profesor.apellido}}, {{profesor.nombre}}
+
+    <a class="btn btn-secondary" href="{% url 'BorrarProfesor' profesor.pk %}">Borrar</a>
+    {% endfor %}
+
+    <a class="btn btn-primary" href="{% url 'AgregarProfesor'%}">Nuevo Profesor</a>
+{% endblock lista_profesores %}

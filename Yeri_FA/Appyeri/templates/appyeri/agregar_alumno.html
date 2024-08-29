@@ -1,0 +1,15 @@
+{% extends 'Appyeri/base.html' %}
+
+{% load static %}
+
+{%block agregar_alumnos%}
+<h1>Agregar Alumno</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Agregar">
+</form>
+
+
+
+{%endblock agregar_alumnos%}

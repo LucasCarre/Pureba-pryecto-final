@@ -20,12 +20,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{% url 'Inicio'%}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Cursos'%}">Cursos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Alumnos'%}">Alumnos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Profesores'%}">Profesores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'ListarCursos'%}">Cursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'ListarAlumnos'%}">Alumnos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'ListarProfesores'%}">Profesores</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Practicas'%}">Practicas</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Sugerencias' %}">Sugerencias</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'BuscarCursos' %}">Encontra tu curso</a></li>
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'BuscarCursos' %}">Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,6 +44,24 @@
         {% endblock practicas %}
         {% block sugerencias%}
         {% endblock sugerencias %}
+        {% block lista_alumnos %}
+        {% endblock lista_alumnos %}
+        {%block borrar_alumnos%}
+        {%endblock borrar_alumnos%}
+        {%block actualizar_alumnos%}
+        {%endblock actualizar_alumnos%}
+        {%block agregar_alumnos%}
+        {%endblock agregar_alumnos%}
+        {% block lista_cursos %}
+        {% endblock lista_cursos %}
+        {% block borrar_cursos %}
+        {% endblock borrar_cursos %}
+        {%block actualizar_cursos%}
+        {%endblock actualizar_cursos%}
+        {%block agregar_cursos%}
+        {%endblock agregar_cursos%}
+        {% block lista_profesores %}
+        {% endblock lista_profesores %}
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>

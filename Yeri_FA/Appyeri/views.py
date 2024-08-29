@@ -2,6 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from Appyeri.models import *
 from Appyeri.forms import *
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 def inicio(request):
     return render(request, 'appyeri/inicio.html')
@@ -71,3 +76,65 @@ def buscar_curso(request):
         mi_formulario = Buscar_cursos()
 
     return render(request, "appyeri/buscar-cursos.html", {"mi_formulario": mi_formulario})
+
+class AlumnoListView(ListView):
+    model = Alumno
+    context_object_name= "Alumnos"
+    template_name= "Appyeri/lista_alumnos.html"
+
+class AlumnoDeleteView(DeleteView):
+    model = Alumno
+    template_name = "Appyeri/alumno_borrar.html"
+    success_url = reverse_lazy("ListarAlumnos") 
+
+
+class AlumnoUpdateView(UpdateView):
+    model = Alumno
+    template_name = "Appyeri/actualizar_alumnos.html"
+    success_url = reverse_lazy("ListarAlumnos")
+    fields= ["nombre", "apellido"]
+
+class AlumnoCreateView(CreateView):
+    model = Alumno
+    template_name = "Appyeri/agregar_alumno.html"
+    success_url = reverse_lazy("ListarAlumnos")
+    fields= ["nombre", "apellido"]
+
+class CursoListView(ListView):
+    model = Curso
+    context_object_name= "Cursos"
+    template_name= "Appyeri/lista_cursos.html"
+
+class CursoDeleteView(DeleteView):
+    model = Curso
+    template_name = "Appyeri/curso_borrar.html"
+    success_url = reverse_lazy("ListarCursos") 
+
+
+class CursoUpdateView(UpdateView):
+    model = Curso
+    template_name = "Appyeri/actualizar_curso.html"
+    success_url = reverse_lazy("ListarCursos")
+    fields= ["nombre", "camada"]
+
+class CursoCreateView(CreateView):
+    model = Curso
+    template_name = "Appyeri/agregar_curso.html"
+    success_url = reverse_lazy("ListarCursos")
+    fields= ["nombre", "camada"]
+
+class ProfesorListView(ListView):
+    model = Profesor
+    context_object_name= "Profesores"
+    template_name= "Appyeri/lista_profesores.html"
+
+class ProfesorCreateView(CreateView):
+    model = Profesor
+    template_name = "Appyeri/agregar_profesor.html"
+    success_url = reverse_lazy("ListarProfesores")
+    fields= ["nombre", "apellido", "email"]
+
+class ProfesorDeleteView(DeleteView):
+    model = Profesor
+    template_name = "Appyeri/borrar_profesror.html"
+    success_url = reverse_lazy("ListarProfesores") 

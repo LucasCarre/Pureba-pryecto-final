@@ -1,0 +1,22 @@
+{% extends 'Appyeri/base.html' %}
+
+{% load static %}
+
+{% block lista_cursos %}
+    <h1 class="text-black fs-3 fw-bolder">Nuestros Cursos</h1>
+    <p class="lead">En nuestra academia deportiva nos propusimos formar profesionales que puedan integrarse en el mundo deportivo.</p>
+    <p class="mb-0">Con nuestros programas podran acceder a todas las herramientas y equipo de profesionales en pos de lograr sus objetivos personales.</p>
+    <p class="mb-0">Podras perfeccionarte en las carreras de: </p>
+    
+    {% for curso in Cursos %}
+    <p>Carrera: {{curso.nombre}}
+    <p>Camada: {{curso.camada}}
+
+    <a class="btn btn-secondary" href="{% url 'BorrarCurso' curso.pk %}">Borrar</a>
+    |
+    <a class="btn btn-secondary" href="{% url 'ActualizarCurso' curso.pk %}">Actualizar</a>
+    {% endfor %}
+    <a class="btn btn-primary" href="{% url 'AgregarCurso'%}">Nuevo Curso</a>
+    <p class="mb-0">Si no ves en esta pagina la carrera que estas buscando te invitamos a nuestra seccion de <a class="btn btn-link" href="{% url 'Sugerencias'%}">Sugerencias</a> para que podamos incorporar la carrera que estas buscando a nuestra academia, muchas gracias</p>
+    
+{% endblock lista_cursos %}

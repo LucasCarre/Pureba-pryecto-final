@@ -4,11 +4,15 @@
 
 {%block actualizar_cursos%}
 <h1>Actualizar datos del Curso</h1>
+<div class="card text-bg-success p-3" style="max max-width: 50rem;" >
+    <div class="card-header" >
 <form action="" method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Actualizar">
 </form>
+    </div>
+</div>
 
 
 

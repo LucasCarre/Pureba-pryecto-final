@@ -3,14 +3,18 @@
 {% load static %}
 
 {% block lista_cursos %}
-    <h1 class="text-black fs-3 fw-bolder">Nuestros Cursos</h1>
-    <p class="lead">En nuestra academia deportiva nos propusimos formar profesionales que puedan integrarse en el mundo deportivo.</p>
-    <p class="mb-0">Con nuestros programas podran acceder a todas las herramientas y equipo de profesionales en pos de lograr sus objetivos personales.</p>
-    <p class="mb-0">Podras perfeccionarte en las carreras de: </p>
+    <h1 class="text-bg-success p-3">Nuestros Cursos</h1>
+    <p class="text-bg-dark p-3" class="lead">En nuestra academia deportiva nos propusimos formar profesionales que puedan integrarse en el mundo deportivo.</p>
+    <p class="text-bg-dark p-3" class="mb-0">Con nuestros programas podran acceder a todas las herramientas y equipo de profesionales en pos de lograr sus objetivos personales.</p>
+    <p class="text-bg-dark p-3" class="mb-0">Podras perfeccionarte en las carreras de: </p>
     
     {% for curso in Cursos %}
+    <table>
+    <div class="card text-bg-success p-3" style="max max-width: 50rem;" >
+        <div class="card-header" >
     <p>Carrera: {{curso.nombre}}
     <p>Camada: {{curso.camada}}
+        <a class="btn btn-secondary" href="{% url 'DetalleCurso' curso.pk %}">Info</a>
 
     {%if request.user.is_superuser %}
     <a class="btn btn-secondary" href="{% url 'BorrarCurso' curso.pk %}">Borrar</a>
@@ -20,9 +24,12 @@
     <a class="btn btn-secondary" href="{% url 'ActualizarCurso' curso.pk %}">Actualizar</a>
     {% endif %}
     {% endfor %}
+        </div>
+    </div>
     {%if request.user.is_staff%}
     <a class="btn btn-primary" href="{% url 'AgregarCurso'%}">Nuevo Curso</a>
     {% endif %}
-    <p class="mb-0">Si no ves en esta pagina la carrera que estas buscando te invitamos a nuestra seccion de <a class="btn btn-link" href="{% url 'Sugerencias'%}">Sugerencias</a> para que podamos incorporar la carrera que estas buscando a nuestra academia, muchas gracias</p>
+    <table>
+    <p class="text-bg-dark p-3" class="mb-0">Si no ves en esta pagina la carrera que estas buscando te invitamos a nuestra seccion de <a class="btn btn-link" href="{% url 'Sugerencias'%}">Sugerencias</a> para que podamos incorporar la carrera que estas buscando a nuestra academia, muchas gracias</p>
     
 {% endblock lista_cursos %}

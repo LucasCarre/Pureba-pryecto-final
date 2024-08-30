@@ -29,6 +29,7 @@ def profesores(request):
 def practicas(request):
     return render(request, 'appyeri/practicas.html')
 
+@login_required
 def sugerencias(request):
     if request.method == 'POST':
 
@@ -78,7 +79,7 @@ def buscar_curso(request):
 
     return render(request, "appyeri/buscar-cursos.html", {"mi_formulario": mi_formulario})
 
-class AlumnoListView(ListView):
+class AlumnoListView(LoginRequiredMixin, ListView):
     model = Alumno
     context_object_name= "Alumnos"
     template_name= "Appyeri/lista_alumnos.html"
@@ -106,6 +107,10 @@ class CursoListView(LoginRequiredMixin, ListView):
     context_object_name= "Cursos"
     template_name= "Appyeri/lista_cursos.html"
 
+class CursoDetailView(DetailView):
+    model = Curso
+    template_name = "Appyeri/detalle_curso.html"
+
 class CursoDeleteView(DeleteView):
     model = Curso
     template_name = "Appyeri/curso_borrar.html"
@@ -116,7 +121,7 @@ class CursoUpdateView(UpdateView):
     model = Curso
     template_name = "Appyeri/actualizar_curso.html"
     success_url = reverse_lazy("ListarCursos")
-    fields= ["nombre", "camada"]
+    fields= ["nombre", "camada", "descripcion"]
 
 class CursoCreateView(CreateView):
     model = Curso
@@ -124,7 +129,7 @@ class CursoCreateView(CreateView):
     success_url = reverse_lazy("ListarCursos")
     fields= ["nombre", "camada"]
 
-class ProfesorListView(ListView):
+class ProfesorListView(LoginRequiredMixin, ListView):
     model = Profesor
     context_object_name= "Profesores"
     template_name= "Appyeri/lista_profesores.html"

@@ -3,18 +3,22 @@
 {% load static %}
 
 {% block lista_profesores %}
-    <h1 class="text-black fs-3 fw-bolder">Nuestros Profesionales</h1>
-    <p class="mb-0">Aqui podras conocer informacion sobre los profesores que forman parte de nuestro equipo...</p>
+    <h1 class="text-bg-success p-3">Nuestros Profesionales</h1>
+    <p class="text-bg-dark p-3" class="mb-0">Aqui podras conocer informacion sobre los profesores que forman parte de nuestro equipo...</p>
     
     {% for profesor in Profesores %}
+    <table>
+    <div class="card text-bg-success p-3" style="max max-width: 50rem;" >
+        <div class="card-header" >
     <p>Profesional: {{profesor.apellido}}, {{profesor.nombre}}
     
     {%if request.user.is_superuser%}
     <a class="btn btn-secondary" href="{% url 'BorrarProfesor' profesor.pk %}">Borrar</a>
     {% endif %}
 
-
+    <table>
     {% endfor %}
-
+        </div>
+    </div>
     <a class="btn btn-primary" href="{% url 'AgregarProfesor'%}">Nuevo Profesor</a>
 {% endblock lista_profesores %}

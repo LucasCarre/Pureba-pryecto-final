@@ -1,0 +1,18 @@
+{% extends 'Appyeri/base.html' %}
+
+{% load static %}
+{% block inicio %}
+<h1>Curso Detalle</h1>
+<table>
+    <div class="card text-bg-success p-3" style="max max-width: 50rem;" >
+        <div class="card-header" >
+<p>Carrera: <i>{{curso.nombre}}</i></p>
+<p>Camada: <i>{{curso.camada}}</i></p>
+<p>Descripcion: <i>{{curso.descripcion}}</i></p>
+<p>
+    <a class="btn btn-primary" href="{% url 'ListarCursos' %}">Regresar</a>
+</p>
+        </div>
+    </div>
+<table>
+{% endblock inicio %}

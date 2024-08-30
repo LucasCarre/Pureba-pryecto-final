@@ -13,12 +13,16 @@
         </div>
     </div>
 </section>
-<h2>Que carrera te gustaria sumaramos a nuestra academia:</h2>
-<p class="lead">Modalidad(virtual o presencial)</p>
+<h2 class="text-bg-success p-3">Que carrera te gustaria sumaramos a nuestra academia:</h2>
+<p class="text-bg-dark p-3" class="lead">Modalidad(virtual o presencial)</p>
 <form action="" method="POST">
     {% csrf_token %}
+    <div class="card text-bg-success p-3" style="max max-width: 20rem;" >
+        <div class="card-footer" >
     <p>Curso: <input type="text" name="nombre del curso"></p>
     <p>Modalidad: <input type="text" name="modalidad"></p>
 
     <input type="submit" value="Enviar">
+</div>
+</div>
 {% endblock sugerencias %}

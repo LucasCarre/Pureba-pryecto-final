@@ -4,10 +4,14 @@
 
 {%block agregar_cursos%}
 <h1>Agregar Curso</h1>
+<div class="card text-bg-success p-3" style="max max-width: 50rem;" >
+    <div class="card-header" >
 <form action="" method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Agregar">
 </form>
+    </div>
+</div>
 
 {%endblock agregar_cursos%}

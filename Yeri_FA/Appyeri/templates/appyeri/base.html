@@ -25,6 +25,7 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'ListarProfesores'%}">Profesores</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Practicas'%}">Practicas</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Sugerencias' %}">Sugerencias</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'About' %}">Acerca de mi</a></li>
                             {% if request.user.is_authenticated %}
                             <img src="{{request.user.avatar.imagen.url}}" alt="" height="40px">
                     <div class="dropdown">

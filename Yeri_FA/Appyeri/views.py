@@ -144,3 +144,6 @@ class ProfesorDeleteView(DeleteView):
     model = Profesor
     template_name = "Appyeri/borrar_profesror.html"
     success_url = reverse_lazy("ListarProfesores") 
+
+def about(request):
+    return render(request, 'appyeri/about.html')

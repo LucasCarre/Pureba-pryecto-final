@@ -5,7 +5,8 @@
 {% block lista_profesores %}
     <h1 class="text-bg-success p-3">Nuestros Profesionales</h1>
     <p class="text-bg-dark p-3" class="mb-0">Aqui podras conocer informacion sobre los profesores que forman parte de nuestro equipo...</p>
-    
+    <img class="img-fluid rounded-circle" src="{% static 'appyeri/assets/img/07.jpeg'%}" width=250 alt="..." />
+    <img class="img-fluid rounded-circle" src="{% static 'appyeri/assets/img/06.jpeg'%}" width=250 alt="..." />
     {% for profesor in Profesores %}
     <table>
     <div class="card text-bg-success p-3" style="max max-width: 50rem;" >

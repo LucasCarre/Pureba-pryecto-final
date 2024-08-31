@@ -3,7 +3,9 @@
 {% load static %}
 
 {% block lista_alumnos %}
-<h1 class="text-bg-dark p-3">Catedra Estudiantil</h1>
+<h1 class="text-bg-success p-3">Catedra Estudiantil</h1>
+    <p class="text-bg-dark p-3" class="mb-0">En esta seccion podras ver tu desarrollo profesional en la academia y tus compañeros de cursada.</p>
+    <img class="img-fluid rounded-circle" src="{% static 'appyeri/assets/img/09.jpg'%}" width=250 alt="..." />
     {%if request.user.is_staff%}
     <a class="btn btn-primary" href="{% url 'AgregarAlumno'%}">Nuevo Alumno</a>
     {% endif %}

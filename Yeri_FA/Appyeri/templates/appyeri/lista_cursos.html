@@ -4,6 +4,7 @@
 
 {% block lista_cursos %}
     <h1 class="text-bg-success p-3">Nuestros Cursos</h1>
+    <img class="img-fluid rounded-circle" src="{% static 'appyeri/assets/img/08.jpg'%}" width=250 alt="..." />
     <p class="text-bg-dark p-3" class="lead">En nuestra academia deportiva nos propusimos formar profesionales que puedan integrarse en el mundo deportivo.</p>
     <p class="text-bg-dark p-3" class="mb-0">Con nuestros programas podran acceder a todas las herramientas y equipo de profesionales en pos de lograr sus objetivos personales.</p>
     <p class="text-bg-dark p-3" class="mb-0">Podras perfeccionarte en las carreras de: </p>
@@ -31,5 +32,4 @@
     {% endif %}
     <table>
     <p class="text-bg-dark p-3" class="mb-0">Si no ves en esta pagina la carrera que estas buscando te invitamos a nuestra seccion de <a class="btn btn-link" href="{% url 'Sugerencias'%}">Sugerencias</a> para que podamos incorporar la carrera que estas buscando a nuestra academia, muchas gracias</p>
-    
 {% endblock lista_cursos %}

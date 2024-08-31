@@ -1,1 +1,4 @@
-# Pureba-pryecto-final
+# Proyecto final
+Se realizo la entrega del proyecto final del curso, la tematica es una Academia de Futbol en la cual se forman profesionales en distintas areas referidas al deporte, se reutilizo el codigo de la tercera preentrega, dentro de la pagina encontraremos una navvar, con distintos botones y enlaces, para poder ingresar a las secciones cursos, alumnos, profesores y sugerencias se necesitar estar logeado, en caso de tener un usuario en la navvar encontremos un boton que nos permitira iniciar sesion o de ser necesario registrase como nuevo usuario, las distintas vistas poseen condicionantes dependiendo la condicion de cada usuario, no tendran los mismos acccesos, usuarios comunes, superusuarios, staff, ect. Encontraran unaseccion acerca de mi donde se comenta una breve informacion sobre el creador de la pagina y como surgio la idea del proyecto, tambien se vera reflejado lo mencionado en el video requerido. 
+
+link video: https://youtu.be/DeMAqbsIN0I?si=vITcf8lByPLjbxde

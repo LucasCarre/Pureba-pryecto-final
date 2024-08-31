@@ -3,9 +3,7 @@
 {% load static %}
 
 {% block lista_alumnos %}
-<h1 class="text-bg-success p-3">Catedra Estudiantil</h1>
-<p class="text-bg-dark p-3" class="lead">Autogestion de carrera profesional.</p>
-    <p class="text-bg-dark p-3" class="mb-0">En esta seccion podras inscricibirte, gestionar tus cursos y ver tu desarrollo profesional en la academia.</p>
+<h1 class="text-bg-dark p-3">Catedra Estudiantil</h1>
     {%if request.user.is_staff%}
     <a class="btn btn-primary" href="{% url 'AgregarAlumno'%}">Nuevo Alumno</a>
     {% endif %}

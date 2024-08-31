@@ -2,12 +2,12 @@
 
 {% load static %}
 
-{% block borrar_cursos %}
+{% block inicio %}
     <form action="" method="POST">
         {% csrf_token %}
-        Seguro que desea borrar a este Profesor? {{profesor.apellido}}, {{profesor.nombre}}
+        Seguro que desea borrar a este Profesor? {{profesor.apellido}}, {{profesor.nombre}} {{profesor.id}}
         <input class="btn btn-primary" type="submit" value="Borrar">
         <a class="btn btn-link" href="{% url 'ListarProfesores' %}">Cancelar</a>
 
     </form>
-{% endblock borrar_cursos %}
+{% endblock inicio %}

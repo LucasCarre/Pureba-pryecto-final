@@ -21,5 +21,7 @@
     {% endfor %}
         </div>
     </div>
+    {% if request.user.is_staff%}
     <a class="btn btn-primary" href="{% url 'AgregarProfesor'%}">Nuevo Profesor</a>
+    {% endif %}
 {% endblock lista_profesores %}

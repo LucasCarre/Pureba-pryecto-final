@@ -24,4 +24,5 @@ urlpatterns = [
     path('profesor/listar', views.ProfesorListView.as_view(), name='ListarProfesores'),
     path('profesor/<pk>/borrar', views.ProfesorDeleteView.as_view(),name='BorrarProfesor'),
     path('profesor/agregar',views.ProfesorCreateView.as_view(),name='AgregarProfesor'),
+    path('profesor/<pk>/confirm_borrar', views.ProfesorDeleteView.as_view(),name='eliminar_profesor')
 ]
